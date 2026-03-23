@@ -1,6 +1,6 @@
 @use "../styles/variables" as *;
 .footer-back {
-    background: linear-gradient(to bottom, #f8f8f8 75%, white 25%);
+  background: linear-gradient(to bottom, $bg-1 70%, white 30%);
 }
 
 .footer {
@@ -69,13 +69,13 @@
     border-radius: 5px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     background-color: white;
-    padding: 30px 25px;
+    padding: 35px 25px;
     max-width: 420px;
 
     &_ul {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
       margin-bottom: 15px;
     }
 
@@ -88,7 +88,7 @@
         border-radius: 100%;
         width: 60px;
         height: 60px;
-        background-color: $navy;
+        background-color: $primary-1;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -120,7 +120,45 @@
   width: 100%;
   text-align: center;
   padding: 20px 45px;
-  background-color: $navy;
+  background-color: $primary-1;
   color: white;
   font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .footer-back {
+    background: linear-gradient(to bottom, $bg-1 70%, white 30%);
+  }
+  .footer {
+    &_content {
+      flex-direction: column;
+      gap: 35px;
+    }
+    &_contact {
+      margin: 0 auto;
+    }
+    &_links {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .footer-back {
+    background: linear-gradient(to bottom, $bg-1 62%, white 38%);
+  }
+  .footer {
+    &_content {
+      flex-direction: column;
+      gap: 35px;
+    }
+    &_contact {
+      margin: 0 auto;
+    }
+    &_links {
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 50px;
+    }
+  }
 }

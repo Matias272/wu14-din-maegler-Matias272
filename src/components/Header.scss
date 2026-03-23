@@ -1,14 +1,21 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 45px;
-    &_nav {
-        &_ul {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            font-size: 18px;
-        }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 45px;
+  &_nav {
+    &_ul {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      font-size: 18px;
     }
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    &_nav {
+      display: none;
+    }
+  }
 }
