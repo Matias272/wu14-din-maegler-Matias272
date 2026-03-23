@@ -1,0 +1,126 @@
+@use "../styles/variables" as *;
+.footer-back {
+    background: linear-gradient(to bottom, #f8f8f8 75%, white 25%);
+}
+
+.footer {
+  padding: 20px 45px;
+  &_brand {
+    &_logo {
+      margin-bottom: 10px;
+    }
+
+    &_description {
+      font-size: 18px;
+      color: #333;
+      max-width: 700px;
+      margin-bottom: 35px;
+    }
+  }
+  &_content {
+    padding-bottom: 30px;
+    display: flex;
+    gap: 120px;
+  }
+
+  &_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &_nav {
+    color: #333;
+    h3 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      font-size: 14px;
+    }
+  }
+
+  &_membership {
+    color: #7b7b7b;
+    &_label {
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+
+    &_name {
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    &_text {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+  }
+
+  &_contact {
+    border-radius: 5px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    padding: 30px 25px;
+    max-width: 420px;
+
+    &_ul {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    &_fig {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &_img {
+        border-radius: 100%;
+        width: 60px;
+        height: 60px;
+        background-color: $navy;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      &_info {
+        &_p1 {
+          margin-bottom: 5px;
+          font-size: 12px;
+          color: #626262;
+        }
+
+        &_p2 {
+          font-weight: 500;
+          font-size: 18px;
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+.footer_bottom {
+  text-transform: capitalize;
+  width: 100%;
+  text-align: center;
+  padding: 20px 45px;
+  background-color: $navy;
+  color: white;
+  font-size: 12px;
+}
