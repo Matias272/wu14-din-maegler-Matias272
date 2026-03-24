@@ -1,0 +1,52 @@
+@use "../styles/variables" as *;
+.search {
+    width: 100%;
+  margin: 0 45px;
+  background-color: white;
+  padding: 30px 25px;
+  & h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 40px;
+      height: 4px;
+      background-color: $primary-1;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  & p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  &_form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    & input {
+      font-size: 16px;
+      font-weight: normal;
+      padding: 2px 10px;
+      border: 1px solid #d3dee8;
+      height: 48px;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+    & button {
+      font-size: 16px;
+      font-weight: normal;
+      height: 48px;
+      width: 120px;
+      color: white;
+      background-color: $primary-1;
+      cursor: pointer;
+    }
+  }
+}
