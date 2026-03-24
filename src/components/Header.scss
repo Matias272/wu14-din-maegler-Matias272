@@ -37,9 +37,15 @@
   }
 }
 @media (max-width: 768px) {
+  .header_top {
+    display: none;
+  }
   .header {
     &_nav {
       display: none;
+    }
+    img {
+      width: 200px;
     }
   }
 }

@@ -127,6 +127,7 @@
     align-items: center;
     &_ul {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         gap: 25px;
         &_fig {
@@ -146,6 +147,25 @@
             }
         }
     }
+}
+@media (max-width:768px) {
+  .home_intro {
+    &_wrapper {
+      padding: 55px 45px;
+      flex-direction: column;
+    }
+    &_img {
+      transform: translateX(-15px);
+      width: 100%;
+    }
+    &_content {
+      width: 100%;
+    }
+  }
+  .intro_bottom_info {
+    padding: 55px 45px;
+  }
+
 }
 
 // --------------------------------------------------------- Homes sec
