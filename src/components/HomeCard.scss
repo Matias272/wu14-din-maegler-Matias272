@@ -1,0 +1,58 @@
+@use "../styles/variables" as *;
+.home_homes_card {
+    background-color: #fff;
+    border: 1px solid #e9edf2;
+    box-shadow: 0 8px 24px rgba(38, 48, 72, 0.06);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    &_content {
+      padding: 18px;
+
+      h3 {
+        color: $head-1;
+        font-size: 21px;
+        margin-bottom: 5px;
+      }
+    }
+
+    &_city {
+      color: #68707a;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    &_desc {
+      color: #3e4652;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    &_meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+
+      span {
+        font-size: 13px;
+        color: #4d5561;
+        padding: 5px 9px;
+        background-color: #f2f7fd;
+        border: 1px solid #e3edf8;
+      }
+    }
+
+    &_price {
+      color: $primary-1;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 1;
+    }
+  }

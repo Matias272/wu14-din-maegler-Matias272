@@ -8,12 +8,7 @@ import Property from "../assets/icons/property.svg";
 import Hero from "../assets/hero.jpg";
 import Family from "../assets/family.jpg";
 import "./Home.scss";
-
-export async function homesLoader() {
-  const response = await fetch("https://dinmaegler.onrender.com/homes");
-  return response.json();
-}
-
+import HomeCard from "../components/HomeCard";
 export default function Home() {
   const homes = useLoaderData();
 
@@ -128,22 +123,15 @@ export default function Home() {
             <p>There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
           </div>
 
-          <div className="home_homes_grid">
-            {homes.map((home) => (
-              <article className="home_homes_card" key={home.id}>
-                <img src={""} alt={home.adress1} />
-                <div className="home_homes_card_content">
-                  <h3>{home.adress1}</h3>
-                  <p className="home_homes_card_city">
-                    {home.postalcode} {home.city}
-                  </p>
-                  <p className="home_homes_card_desc">{home.type}</p>
+          <ul className="home_homes_grid">
 
-                  <p className="home_homes_card_price">{home.price}</p>
-                </div>
-              </article>
+            {homes.map((home) => (
+              <li key={home.id}>
+
+                <HomeCard home={home} />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

@@ -1,12 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Home, { homesLoader } from "./pages/Home";
+import getAllHomes from "./loaders/getAllHomes";
+import Home from "./pages/Home";
 import "./styles/main.scss";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    loader: homesLoader,
+    loader: getAllHomes,
   },
 ]);
 
