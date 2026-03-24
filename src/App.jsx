@@ -1,17 +1,21 @@
-import { Route, Routes, BrowserRouter } from "react-router";
-import Home from "./pages/Home";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Home, { homesLoader } from "./pages/Home";
 import "./styles/main.scss";
-export default function App() {
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    loader: homesLoader,
+  },
+]);
+
+export default function App() {
   return (
     <main className="page-wrapper">
-    <BrowserRouter>
-      <Routes>
-        <Route path={"/"} element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+      <RouterProvider router={router} />
     </main>
-  )
+  );
 }
 
 

@@ -1,13 +1,23 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Search from "../components/Search";
+import { useLoaderData } from "react-router";
 import House from "../assets/icons/house-hand.svg";
 import HomeIc from "../assets/icons/home.svg";
 import Property from "../assets/icons/property.svg";
 import Hero from "../assets/hero.jpg";
 import Family from "../assets/family.jpg";
 import "./Home.scss";
+
+export async function homesLoader() {
+  const response = await fetch("https://dinmaegler.onrender.com/homes");
+  return response.json();
+}
+
 export default function Home() {
+  const homes = useLoaderData();
+
+
   return (
     <>
       <Header />
@@ -110,6 +120,33 @@ export default function Home() {
           </ul>
         </div>
       </section>
+
+      <section className="home_homes">
+        <div className="section_wrapper home_homes_wrapper">
+          <div className="home_homes_head">
+            <h2>Udvalgte Boliger</h2>
+            <p>There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
+          </div>
+
+          <div className="home_homes_grid">
+            {homes.map((home) => (
+              <article className="home_homes_card" key={home.id}>
+                <img src={""} alt={home.adress1} />
+                <div className="home_homes_card_content">
+                  <h3>{home.adress1}</h3>
+                  <p className="home_homes_card_city">
+                    {home.postalcode} {home.city}
+                  </p>
+                  <p className="home_homes_card_desc">{home.type}</p>
+
+                  <p className="home_homes_card_price">{home.price}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </>
   );
