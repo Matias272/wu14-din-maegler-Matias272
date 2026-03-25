@@ -9,10 +9,12 @@ import Hero from "../assets/hero.jpg";
 import Giant from "../assets/giant-building.jpg";
 import Family from "../assets/family.jpg";
 import Arrow from "../assets/icons/Arrow.svg";
+import Linked from "../assets/icons/linked.svg";
+import Mail from "../assets/icons/mail.svg";
 import "./Home.scss";
 import HomeCard from "../components/HomeCard";
 export default function Home() {
-  const homes = useLoaderData();
+  const { homes, agents } = useLoaderData();
 
   return (
     <>
@@ -137,6 +139,7 @@ export default function Home() {
           <button className="home_homes_btn">Se alle boliger</button>
         </div>
       </section>
+
       <section className="home_news">
         <img className="home_news_img" src={Giant} alt="" />
         <div className="section_wrapper home_news_wrapper">
@@ -157,6 +160,44 @@ export default function Home() {
               </button>
             </div>
           </form>
+        </div>
+      </section>
+      <section className="home_agents">
+        <div className="section_wrapper home_agents_wrapper">
+          <div className="home_agents_head">
+            <h2>Mød vores engagerede medarbejdere</h2>
+            <p>
+              Din Mægler er garant for altid veluddannet assistance i dit
+              boligsalg.
+            </p>
+            <p>Kontakt en af vores medarbejdere.</p>
+          </div>
+
+          <ul className="home_agents_grid">
+            {agents.slice(0, 3).map((agent) => (
+              <li key={agent.id} className="home_agents_card">
+                <figure>
+                  <img src={agent.image.url} alt={agent.name} />
+                  <figcaption className="home_agents_card_content">
+                    <h4>{agent.name}</h4>
+                    <p>{agent.title}</p>
+                    <ul className="home_agents_card_content_ul">
+                      <li>
+                        <a href={`mailto:${agent.email}`}>
+                          <img src={Mail} alt="" />
+                        </a>
+                      </li>
+                      <li>
+                        <img src={Linked} alt="" />
+                      </li>
+                    </ul>
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+
+          <button className="home_agents_btn">Se alle mæglere</button>
         </div>
       </section>
 

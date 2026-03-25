@@ -190,7 +190,7 @@
   &_wrapper {
     padding: 100px 45px;
     display: grid;
-    gap: 35px;
+    gap: 55px;
   }
 
   &_grid {
@@ -313,6 +313,122 @@
         font-size: 16px;
         padding: 20px;
       }
+    }
+  }
+}
+
+// --------------------------------------------------------- Agents section
+.home_agents {
+  &_wrapper {
+    padding: 55px 45px;
+    display: grid;
+    gap: 30px;
+  }
+
+  &_head {
+    text-align: center;
+
+    h2 {
+      color: $head-1;
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: $para-1;
+      line-height: 1.5;
+      font-size: 18px;
+    }
+  }
+
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  &_card {
+    background-color: white;
+    border: 1px solid #d7dde3;
+
+    img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    &_content {
+      padding: 18px;
+      text-align: center;
+      display: grid;
+      gap: 10px;
+      &_ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        & a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        & img {
+          object-fit: contain;
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      h4 {
+        margin: 0;
+        color: $head-1;
+        font-size: 24px;
+      }
+
+      p {
+        margin-bottom: 5px;
+        color: #5a5f67;
+      }
+
+      a {
+        color: $head-1;
+        text-decoration: none;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &_btn {
+    margin: 0 auto;
+    background-color: $primary-1;
+    color: white;
+    height: 52px;
+    width: 170px;
+    font-size: 16px;
+    border-radius: 2px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home_agents {
+    &_grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home_agents {
+    &_wrapper {
+      padding: 55px 20px;
+    }
+
+    &_head h2 {
+      font-size: 30px;
+    }
+
+    &_grid {
+      grid-template-columns: 1fr;
     }
   }
 }
