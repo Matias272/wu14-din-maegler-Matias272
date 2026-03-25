@@ -117,42 +117,42 @@
   }
 }
 .intro_line {
-    max-width: 1100px;
-    margin: 0 auto;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 .intro_bottom_info {
-    padding: 100px 45px;
+  padding: 100px 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &_ul {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    &_ul {
-      width: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 25px;
-        & li {
-          max-width: 300px;
-        }
-        &_fig {
-            display: flex;
-            align-items: start;
-            gap: 7px;
-            & img {
-                background-color: $sp-1;
-                padding: 10px;
-            }
-            & h4 {
-                font-size: 24px;
-                margin-bottom: 10px;
-            }
-            & p {
-                font-size: 18px;
-            }
-        }
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+    & li {
+      max-width: 300px;
     }
+    &_fig {
+      display: flex;
+      align-items: start;
+      gap: 7px;
+      & img {
+        background-color: $sp-1;
+        padding: 10px;
+      }
+      & h4 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      & p {
+        font-size: 18px;
+      }
+    }
+  }
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .home_intro {
     &_wrapper {
       padding: 55px 45px;
@@ -169,13 +169,11 @@
   .intro_bottom_info {
     padding: 55px 45px;
   }
-
 }
 
 // --------------------------------------------------------- Homes sec
 .home_homes {
   background-color: $bg-1;
-  padding: 100px 45px;
   &_head {
     text-align: center;
     h2 {
@@ -190,18 +188,25 @@
     }
   }
   &_wrapper {
+    padding: 100px 45px;
     display: grid;
     gap: 35px;
   }
-
 
   &_grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
   }
-
-  
+  &_btn {
+    background-color: $primary-1;
+    color: white;
+    font-size: 18px;
+    margin: 0 auto;
+    height: 62px;
+    width: 178px;
+    border-radius: 2px;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -214,7 +219,7 @@
 
 @media (max-width: 768px) {
   .home_homes {
-    padding: 0 20px 70px;
+    padding: 55px 45px;
 
     &_head {
       h2 {
@@ -228,6 +233,86 @@
 
     &_grid {
       grid-template-columns: 1fr;
+    }
+  }
+}
+
+// --------------------------------------------------------- Homes newsEmail
+.home_news {
+  height: 300px;
+  position: relative;
+  &_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #394652e7;
+  }
+  &_wrapper {
+    max-width: 1200px;
+    width: 100%;
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 45px;
+    &_form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+      & label {
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        width: 50%;
+      }
+      &_input {
+        position: relative;
+        font-size: 18px;
+        width: 50%;
+        & input {
+          font-size: 18px;
+          border-radius: 2px;
+          border: none;
+          width: 100%;
+          padding: 22px;
+          &:focus {
+            outline: none;
+          }
+
+        }
+        &_btn {
+          background-color: rgba(128, 128, 128, 0);
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+@media (max-width:768px) {
+  .home_news_wrapper_form {
+    flex-direction: column;
+    & label {
+      text-align: center;
+      width: 100%;
+    }
+    &_input {
+      width: 100%;
+      & input {
+        font-size: 16px;
+        padding: 20px;
+      }
     }
   }
 }

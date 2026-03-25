@@ -6,12 +6,13 @@ import House from "../assets/icons/house-hand.svg";
 import HomeIc from "../assets/icons/home.svg";
 import Property from "../assets/icons/property.svg";
 import Hero from "../assets/hero.jpg";
+import Giant from "../assets/giant-building.jpg";
 import Family from "../assets/family.jpg";
+import Arrow from "../assets/icons/Arrow.svg";
 import "./Home.scss";
 import HomeCard from "../components/HomeCard";
 export default function Home() {
   const homes = useLoaderData();
-
 
   return (
     <>
@@ -120,18 +121,42 @@ export default function Home() {
         <div className="section_wrapper home_homes_wrapper">
           <div className="home_homes_head">
             <h2>Udvalgte Boliger</h2>
-            <p>There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
+            <p>
+              There are many variations of passages of Lorem Ipsum available but
+              the this in majority have suffered alteration in some
+            </p>
           </div>
 
           <ul className="home_homes_grid">
-
-            {homes.map((home) => (
+            {homes.slice(0, 4).map((home) => (
               <li key={home.id}>
-
                 <HomeCard home={home} />
               </li>
             ))}
           </ul>
+          <button className="home_homes_btn">Se alle boliger</button>
+        </div>
+      </section>
+      <section className="home_news">
+        <img className="home_news_img" src={Giant} alt="" />
+        <div className="section_wrapper home_news_wrapper">
+          <form className="home_news_wrapper_form" action="">
+            <label htmlFor="email">
+              Tilmeld dig vores nyhedsbrev og hold dig opdateret på
+              boligmarkedet
+            </label>
+            <div className="home_news_wrapper_form_input">
+              <input
+                placeholder="indtast din email adresse"
+                type="email"
+                name="email"
+                id="emailNew"
+              />
+              <button className="home_news_wrapper_form_input_btn">
+                <img src={Arrow} alt="wqe" />
+              </button>
+            </div>
+          </form>
         </div>
       </section>
 
