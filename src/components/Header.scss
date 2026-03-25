@@ -26,13 +26,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 45px;
+  padding: 0 45px;
   &_nav {
     &_ul {
       display: flex;
       align-items: center;
-      gap: 40px;
       font-size: 18px;
+      & li {
+        position: relative;
+        height: 75px;
+        &::after {
+          transition: all 0.2s ease-in-out;
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 0;
+          height: 5px;
+          background-color: $primary-1;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+        & a {
+          padding: 0 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          &:hover {
+            background-color: rgba(118, 118, 118, 0.162);
+          }
+        }
+        
+      }
     }
   }
 }
