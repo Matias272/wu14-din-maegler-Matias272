@@ -2,6 +2,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Search from "../components/Search";
 import { useLoaderData } from "react-router";
+import { Link } from "react-router";
 import House from "../assets/icons/house-hand.svg";
 import HomeIc from "../assets/icons/home.svg";
 import Property from "../assets/icons/property.svg";
@@ -140,7 +141,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <button className="home_homes_btn">Se alle boliger</button>
+          <Link to="/properties" className="home_homes_btn">Se alle boliger</Link>
         </div>
       </section>
 

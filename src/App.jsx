@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import getAllHomes from "./loaders/getAllHomes";
 import getAllAgents from "./loaders/getAllAgents";
 import Home from "./pages/Home";
+import PropertyList from "./pages/PropertyList";
 import "./styles/main.scss";
 
 const router = createBrowserRouter([
@@ -14,6 +15,15 @@ const router = createBrowserRouter([
         getAllAgents(),
       ]);
       return { homes, agents };
+    },
+    hydrateFallbackElement: <h1>Loading.............................................................................................................................</h1>
+  },
+  {
+    path: "/properties",
+    element: <PropertyList />,
+    loader: async () => {
+      const homes = await getAllHomes();
+      return { homes };
     },
     hydrateFallbackElement: <h1>Loading.............................................................................................................................</h1>
   }

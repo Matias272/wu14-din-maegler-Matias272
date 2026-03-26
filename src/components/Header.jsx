@@ -33,7 +33,7 @@ export default function Header() {
           <nav className="header_nav">
             <ul className="header_nav_ul">
               <li>
-                <NavLink>Boliger til salg</NavLink>
+                <NavLink to={"/properties"}>Boliger til salg</NavLink>
               </li>
               <li>
                 <NavLink>Mæglere</NavLink>

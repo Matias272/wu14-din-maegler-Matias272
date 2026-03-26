@@ -206,6 +206,12 @@
     height: 62px;
     width: 178px;
     border-radius: 2px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 62px;
+    border: none;
+    cursor: pointer;
   }
 
   &_empty {
