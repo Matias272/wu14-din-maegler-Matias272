@@ -4,6 +4,7 @@ import getAllAgents from "./loaders/getAllAgents";
 import Home from "./pages/Home";
 import PropertyList from "./pages/PropertyList";
 import "./styles/main.scss";
+import Loading from "./components/Loading";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
       ]);
       return { homes, agents };
     },
-    hydrateFallbackElement: <h1>Loading.............................................................................................................................</h1>
+    hydrateFallbackElement: <Loading />
   },
   {
     path: "/properties",
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
       const homes = await getAllHomes();
       return { homes };
     },
-    hydrateFallbackElement: <h1>Loading.............................................................................................................................</h1>
+    hydrateFallbackElement: <Loading />
   }
 ]);
 

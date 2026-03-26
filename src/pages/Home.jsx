@@ -236,7 +236,6 @@ export default function Home() {
           </div>
         </figure>
       </section>
-
       <Footer />
     </>
   );
