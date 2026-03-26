@@ -8,12 +8,15 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    loader: async () => {
-      const [homes, agents] = await Promise.all([getAllHomes(), getAllAgents()]);
+    loader: async ({ request }) => {
+      const [homes, agents] = await Promise.all([
+        getAllHomes(request),
+        getAllAgents(),
+      ]);
       return { homes, agents };
     },
     hydrateFallbackElement: <h1>Loading.............................................................................................................................</h1>
-  },
+  }
 ]);
 
 export default function App() {

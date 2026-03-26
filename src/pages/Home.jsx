@@ -8,9 +8,13 @@ import Property from "../assets/icons/property.svg";
 import Hero from "../assets/hero.jpg";
 import Giant from "../assets/giant-building.jpg";
 import Family from "../assets/family.jpg";
+import Phone2 from "../assets/Phone-2.png";
+import Phone1 from "../assets/Phone-1.png";
 import Arrow from "../assets/icons/Arrow.svg";
 import Linked from "../assets/icons/linked.svg";
 import Mail from "../assets/icons/mail.svg";
+import Store from "../assets/icons/play-store.svg";
+import Apple from "../assets/icons/apple.svg";
 import "./Home.scss";
 import HomeCard from "../components/HomeCard";
 export default function Home() {
@@ -199,6 +203,37 @@ export default function Home() {
 
           <button className="home_agents_btn">Se alle mæglere</button>
         </div>
+      </section>
+      <section className="home_app">
+        <figure className="section_wrapper home_app_wrapper">
+          <figcaption className="home_app_wrapper_content">
+            <h2>Hold dig opdateret på salgsprocessen</h2>
+            <p>
+              Når du sælger din bolig hos Din Mægler, kommunikerer du nemt med
+              den ansvarlige mægler eller butik med vores app. Her kan du også
+              se statistik på interessen for din bolig i alle vores
+              salgskanaler.
+            </p>
+            <ul className="home_app_wrapper_content_ul">
+              <li>
+                <button className="home_app_wrapper_content_ul_btn1">
+                  <img src={Store} alt="" />
+                  Google Play
+                </button>
+              </li>
+              <li>
+                <button className="home_app_wrapper_content_ul_btn2">
+                  <img src={Apple} alt="" />
+                  Apple Store
+                </button>
+              </li>
+            </ul>
+          </figcaption>
+          <div className="home_app_wrapper_img">
+            <img className="home_app_wrapper_img_img1" src={Phone1} alt="" />
+            <img className="home_app_wrapper_img_img2" src={Phone2} alt="" />
+          </div>
+        </figure>
       </section>
 
       <Footer />

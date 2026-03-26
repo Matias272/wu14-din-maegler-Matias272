@@ -207,6 +207,11 @@
     width: 178px;
     border-radius: 2px;
   }
+
+  &_empty {
+    text-align: center;
+    color: #5a5f67;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -286,7 +291,6 @@
           &:focus {
             outline: none;
           }
-
         }
         &_btn {
           background-color: rgba(128, 128, 128, 0);
@@ -300,7 +304,7 @@
     }
   }
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .home_news_wrapper_form {
     flex-direction: column;
     & label {
@@ -317,7 +321,7 @@
   }
 }
 
-// --------------------------------------------------------- Agents section
+// ------------------------------------------------------------- Agents section
 .home_agents {
   &_wrapper {
     padding: 55px 45px;
@@ -386,8 +390,9 @@
       }
 
       p {
+        font-size: 18px;
         margin-bottom: 5px;
-        color: #5a5f67;
+        color: $para-2;
       }
 
       a {
@@ -406,6 +411,7 @@
     width: 170px;
     font-size: 16px;
     border-radius: 2px;
+    font-weight: 500;
   }
 }
 
@@ -431,4 +437,67 @@
       grid-template-columns: 1fr;
     }
   }
+}
+
+// ------------------------------------------------------------- Home Download app section
+.home_app {
+  background-color: $primary-1;
+  color: white;
+  &_wrapper {
+    padding: 65px 45px 0 45px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &_content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      & h2 {
+        max-width: 350px;
+        font-size: 38px;
+        margin: 0;
+      }
+      & p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 0;
+        max-width: 500px;
+      }
+      &_ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        & button {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 16px 36px;
+          border-radius: 5px;
+          font-size: 18px;
+          font-weight: 600;
+          cursor: pointer;
+        }
+        &_btn1 {
+          background-color: white;
+          color: $primary-1;
+
+        }
+        &_btn2 {
+          background-color: $primary-1;
+          color: white;
+          border: 2px solid white;
+
+        }
+      }
+    }
+    &_img {
+      display: flex;
+      &_img1 {
+        transform: translateX(50px);
+      }
+    }
+  }
+}
+@media (max-width:768px) {
+  
 }
