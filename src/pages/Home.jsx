@@ -58,7 +58,7 @@ export default function Home() {
         <img className="home_hero_img" src={Hero} alt="" />
         <div className="home_hero_content">
           <h2>Søg efter din drømmebolig</h2>
-          <Search />
+          <Search antalBoliger={homes.length} />
         </div>
       </section>
       <section className="home_intro">

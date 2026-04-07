@@ -43,10 +43,9 @@ export default function PropertyList() {
       <div className="property_list">
         <section className="property_list_head">
           <h1>Søg efter alle boligerne</h1>
-          <p>Gennemse alle {homes.length} boliger til salg</p>
         </section>
 
-        <section className="property_list_filters">
+        <section className="section_wrapper property_list_filters">
           <label>
             Boligtype
             <select
@@ -85,7 +84,7 @@ export default function PropertyList() {
           </label>
         </section>
 
-        <section className="property_list_wrapper">
+        <section className=" section_wrapper property_list_wrapper">
           {filteredHomes.length === 0 ? (
             <p className="property_list_empty">
               Ingen boliger matcher dine filtre. Prøv at justere søgekriterierne.
