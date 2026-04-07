@@ -1,8 +1,10 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Search from "../components/Search";
+import { useState } from "react";
 import { useLoaderData } from "react-router";
 import { Link } from "react-router";
+import { z } from "zod";
 import House from "../assets/icons/house-hand.svg";
 import HomeIc from "../assets/icons/home.svg";
 import Property from "../assets/icons/property.svg";
@@ -20,11 +22,37 @@ import Per from "../assets/icons/cust1.svg";
 import Ubi from "../assets/icons/maps2.svg";
 import "./Home.scss";
 import HomeCard from "../components/HomeCard";
+
+const newsletterSchema = z.object({
+  email: z.string().email(),
+});
+
 export default function Home() {
   const { homes, agents } = useLoaderData();
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleNewsletterSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get("email")?.toString().trim() ?? "";
+    const result = newsletterSchema.safeParse({ email });
+
+    if (!result.success) {
+      return;
+    }
+
+    setIsSubscribed(true);
+    event.currentTarget.reset();
+
+    setTimeout(() => {
+      setIsSubscribed(false);
+    }, 2500);
+  };
 
   return (
     <>
+      {isSubscribed && <div className="home_news_success">Tilmedlt</div>}
       <Header />
       <section className="home_hero">
         <img className="home_hero_img" src={Hero} alt="" />
@@ -152,8 +180,8 @@ export default function Home() {
       <section className="home_news">
         <img className="home_news_img" src={Giant} alt="" />
         <div className="section_wrapper home_news_wrapper">
-          <form className="home_news_wrapper_form" action="">
-            <label htmlFor="email">
+          <form className="home_news_wrapper_form" onSubmit={handleNewsletterSubmit}>
+            <label htmlFor="emailNew">
               Tilmeld dig vores nyhedsbrev og hold dig opdateret på
               boligmarkedet
             </label>
@@ -164,7 +192,7 @@ export default function Home() {
                 name="email"
                 id="emailNew"
               />
-              <button className="home_news_wrapper_form_input_btn">
+              <button type="submit" className="home_news_wrapper_form_input_btn">
                 <img src={Arrow} alt="wqe" />
               </button>
             </div>
