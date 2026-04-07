@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import HomeCard from "../components/HomeCard";
+import Backi from "../assets/backi.jpg";
 import "./PropertyList.scss";
 
 export default function PropertyList() {
@@ -43,6 +44,7 @@ export default function PropertyList() {
       <div className="property_list">
         <section className="property_list_head">
           <h1>Søg efter alle boligerne</h1>
+          <img className="property_list_head_img" src={Backi} alt="" />
         </section>
 
         <section className="section_wrapper property_list_filters">
