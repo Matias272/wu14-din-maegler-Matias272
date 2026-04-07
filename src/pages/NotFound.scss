@@ -1,0 +1,46 @@
+@use "../styles/variables" as *;
+.notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 25px;
+  background-color: rgba(238, 247, 255, 1);
+  &_title {
+    background: linear-gradient(to bottom, rgba(238, 247, 255, 1) 55%, $primary-1 45%);
+    background-color: red;
+    position: relative;
+    & h2 {
+      font-size: 8rem;
+      font-weight: 700;
+      color: white;
+      text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+    }
+  }
+  &_p1 {
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: $para-1;
+    margin: 1rem 0;
+  }
+  &_p2 {
+    font-size: 0.9rem;
+    color: $para-1;
+    margin-bottom: 2rem;
+  }
+  &_btn {
+    background-color: $primary-1;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(13, 36, 139);
+    }
+  }
+}

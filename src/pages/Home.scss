@@ -486,13 +486,11 @@
         &_btn1 {
           background-color: white;
           color: $primary-1;
-
         }
         &_btn2 {
           background-color: $primary-1;
           color: white;
           border: 2px solid white;
-
         }
       }
     }
@@ -504,6 +502,23 @@
     }
   }
 }
-@media (max-width:768px) {
-  
+@media (max-width: 768px) {
+  .home_app {
+    &_wrapper {
+      &_content {
+        width: 100%;
+        align-items: center;
+      }
+      gap: 55px;
+      &_img {
+        transform: translateX(-25px);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        & img {
+          width: 50%;
+        }
+      }
+    }
+  }
 }
