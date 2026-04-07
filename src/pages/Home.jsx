@@ -16,6 +16,8 @@ import Linked from "../assets/icons/linked.svg";
 import Mail from "../assets/icons/mail.svg";
 import Store from "../assets/icons/play-store.svg";
 import Apple from "../assets/icons/apple.svg";
+import Per from "../assets/icons/cust1.svg";
+import Ubi from "../assets/icons/maps2.svg";
 import "./Home.scss";
 import HomeCard from "../components/HomeCard";
 export default function Home() {
@@ -98,24 +100,24 @@ export default function Home() {
             </li>
             <li>
               <figure className="intro_bottom_info_ul_fig">
-                <img src={Property} alt="" />
+                <img src={Ubi} alt="" />
                 <figcaption>
-                  <h4>Bestil et salgstjek</h4>
+                  <h4>74 Butikker</h4>
                   <p>
-                    Med et Din Mægler Salgstjek bliver du opdateret på værdien
-                    af din bolig.
+                    Hos Din Mægler er din bolig til salg i alle vores 74
+                    butikker, som er fordelt rundt om i Danmark.
                   </p>
                 </figcaption>
               </figure>
             </li>
             <li>
               <figure className="intro_bottom_info_ul_fig">
-                <img src={Property} alt="" />
+                <img src={Per} alt="" />
                 <figcaption>
-                  <h4>Bestil et salgstjek</h4>
+                  <h4>Tilmeld køberkartotek</h4>
                   <p>
-                    Med et Din Mægler Salgstjek bliver du opdateret på værdien
-                    af din bolig.
+                    Når du er tilmeldt vores køberkartotek, bliver du kontaktet
+                    inden en ny bolig bliver annonceret.
                   </p>
                 </figcaption>
               </figure>
@@ -141,7 +143,9 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <Link to="/properties" className="home_homes_btn">Se alle boliger</Link>
+          <Link to="/properties" className="home_homes_btn">
+            Se alle boliger
+          </Link>
         </div>
       </section>
 
