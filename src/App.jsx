@@ -9,6 +9,7 @@ import PropertyList from "./pages/PropertyList";
 import PropertyDetails from "./pages/PropertyDetails";
 import Agents from "./pages/Agents";
 import AgentDetails from "./pages/AgentDetails";
+import Kontakt from "./pages/Kontakt";
 import "./styles/main.scss";
 import Loading from "./components/Loading";
 
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
       const agent = await getAgentById(params.id);
       return { agent };
     },
+    hydrateFallbackElement: <Loading />
+  },
+  {
+    path: "/contact",
+    element: <Kontakt />,
     hydrateFallbackElement: <Loading />
   },
   {

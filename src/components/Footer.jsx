@@ -70,13 +70,13 @@ export default function Footer() {
                 <h3>Quick Links</h3>
                 <ul>
                   <li>
-                    <NavLink to={"/"}>Boliger til salg</NavLink>
+                    <NavLink to={"/properties"}>Boliger til salg</NavLink>
                   </li>
                   <li>
-                    <NavLink to={"/"}>Mæglere</NavLink>
+                    <NavLink to={"/agents"}>Mæglere</NavLink>
                   </li>
                   <li>
-                    <NavLink to={"/"}>Kontakt os</NavLink>
+                    <NavLink to={"/contact"}>Kontakt os</NavLink>
                   </li>
                   <li>
                     <NavLink to={"/"}>Log ind / bliv bruger</NavLink>

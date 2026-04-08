@@ -42,7 +42,7 @@ export default function Header() {
                 <NavLink>Mine favoritter</NavLink>
               </li>
               <li>
-                <NavLink>Kontakt</NavLink>
+                <NavLink to="/contact">Kontakt</NavLink>
               </li>
             </ul>
           </nav>
