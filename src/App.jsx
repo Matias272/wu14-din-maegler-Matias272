@@ -1,9 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import getAllHomes from "./loaders/getAllHomes";
 import getAllAgents from "./loaders/getAllAgents";
+import getHomeById from "./loaders/getHomeById";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import PropertyList from "./pages/PropertyList";
+import PropertyDetails from "./pages/PropertyDetails";
 import "./styles/main.scss";
 import Loading from "./components/Loading";
 
@@ -26,6 +28,15 @@ const router = createBrowserRouter([
     loader: async () => {
       const homes = await getAllHomes();
       return { homes };
+    },
+    hydrateFallbackElement: <Loading />
+  },
+  {
+    path: "/properties/:id",
+    element: <PropertyDetails />,
+    loader: async ({ params }) => {
+      const home = await getHomeById(params.id);
+      return { home };
     },
     hydrateFallbackElement: <Loading />
   },

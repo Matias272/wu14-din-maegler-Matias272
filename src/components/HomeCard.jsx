@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import "./HomeCard.scss";
 
 export default function HomeCard({ home }) {
@@ -14,31 +15,33 @@ export default function HomeCard({ home }) {
 
   return (
     <figure className="home_card" key={home.id}>
-      <img src={home.images[0].url} alt={home.adress1} />
-      <figcaption className="home_card_content">
-        <h3>{home.adress1}</h3>
-        <p className="home_card_city">
-          {home.postalcode} {home.city}
-        </p>
-        <p className="home_card_desc">
-          <strong>{home.type}</strong> Ejerudgift: {home.cost}
-        </p>
-        <hr />
-        <div className="home_card_bottom">
-          <div className="home_card_bottom_left">
-            <span
-              style={{ background: labelColor }}
-              className="home_card_bottom_energy"
-            >
-              {home.energylabel}
-            </span>
-            <p>
-              <span className="home_card_bottom_left_room">{home.rooms?.toString().split("/")[0]} værelser</span> {home.livingspace} m²
-            </p>
+      <Link to={`/properties/${home.id}`}>
+        <img src={home.images[0].url} alt={home.adress1} />
+        <figcaption className="home_card_content">
+          <h3>{home.adress1}</h3>
+          <p className="home_card_city">
+            {home.postalcode} {home.city}
+          </p>
+          <p className="home_card_desc">
+            <strong>{home.type}</strong> Ejerudgift: {home.cost}
+          </p>
+          <hr />
+          <div className="home_card_bottom">
+            <div className="home_card_bottom_left">
+              <span
+                style={{ background: labelColor }}
+                className="home_card_bottom_energy"
+              >
+                {home.energylabel}
+              </span>
+              <p>
+                <span className="home_card_bottom_left_room">{home.rooms?.toString().split("/")[0]} værelser</span> {home.livingspace} m²
+              </p>
+            </div>
+            <strong className="home_card_price">Kr. {Number(home.price).toLocaleString("de-DE")}</strong>
           </div>
-          <strong className="home_card_price">Kr. {Number(home.price).toLocaleString("de-DE")}</strong>
-        </div>
-      </figcaption>
+        </figcaption>
+      </Link>
       <button
         onClick={() => setIsFav((prev) => !prev)}
         className="home_card_heart"
