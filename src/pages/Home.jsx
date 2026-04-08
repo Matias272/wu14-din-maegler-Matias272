@@ -234,7 +234,9 @@ export default function Home() {
             ))}
           </ul>
 
-          <button className="home_agents_btn">Se alle mæglere</button>
+          <Link to="/agents" className="home_agents_btn">
+            Se alle mæglere
+          </Link>
         </div>
       </section>
       <section className="home_app">

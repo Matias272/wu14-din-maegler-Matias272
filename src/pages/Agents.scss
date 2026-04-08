@@ -1,0 +1,150 @@
+@use "../styles/variables" as *;
+
+.agents_page {
+  background-color: #f2f2f2;
+  padding-bottom: 90px;
+
+  &_head {
+    position: relative;
+    height: 150px;
+
+    &_img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: #152638e1;
+    }
+
+    h1 {
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 38px;
+      text-align: center;
+      width: 100%;
+      padding: 0 45px;
+    }
+  }
+
+  &_content {
+    padding: 60px 45px 0;
+  }
+
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  &_card {
+    background-color: white;
+    border: 1px solid #e5eaef;
+
+    &_link {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    figure {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 245px;
+      object-fit: cover;
+      display: block;
+    }
+
+    &_content {
+      text-align: center;
+      padding: 16px 12px;
+
+      h3 {
+        color: $head-1;
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+
+      p {
+        color: #808892;
+        font-size: 13px;
+        margin-bottom: 12px;
+      }
+    }
+
+    &_icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+
+      button,
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        cursor: pointer;
+        background-color: transparent;
+      }
+
+      img {
+        width: 14px;
+        height: 14px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &_empty {
+    color: #5a5f67;
+    text-align: center;
+  }
+}
+
+@media (max-width: 980px) {
+  .agents_page {
+    &_grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .agents_page {
+    &_head {
+      h1 {
+        font-size: 28px;
+        padding: 0 20px;
+      }
+    }
+
+    &_content {
+      padding: 35px 20px 0;
+    }
+
+    &_grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    &_card {
+      img {
+        height: 280px;
+      }
+    }
+  }
+}

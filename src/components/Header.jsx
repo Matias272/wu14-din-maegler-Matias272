@@ -36,7 +36,7 @@ export default function Header() {
                 <NavLink to={"/properties"}>Boliger til salg</NavLink>
               </li>
               <li>
-                <NavLink>Mæglere</NavLink>
+                <NavLink to="/agents">Mæglere</NavLink>
               </li>
               <li>
                 <NavLink>Mine favoritter</NavLink>
