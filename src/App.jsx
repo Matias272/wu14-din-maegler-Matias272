@@ -10,8 +10,10 @@ import PropertyDetails from "./pages/PropertyDetails";
 import Agents from "./pages/Agents";
 import AgentDetails from "./pages/AgentDetails";
 import Kontakt from "./pages/Kontakt";
+import Auth from "./pages/Auth";
 import "./styles/main.scss";
 import Loading from "./components/Loading";
+import { AuthProvider } from "./context/AuthContext";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +65,11 @@ const router = createBrowserRouter([
     hydrateFallbackElement: <Loading />
   },
   {
+    path: "/auth",
+    element: <Auth />,
+    hydrateFallbackElement: <Loading />
+  },
+  {
     path: "/contact",
     element: <Kontakt />,
     hydrateFallbackElement: <Loading />
@@ -76,9 +83,11 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <main className="page-wrapper">
-      <RouterProvider router={router} />
-    </main>
+    <AuthProvider>
+      <main className="page-wrapper">
+        <RouterProvider router={router} />
+      </main>
+    </AuthProvider>
   );
 }
 

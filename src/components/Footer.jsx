@@ -1,10 +1,19 @@
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import Logo from "../assets/logo.svg";
 import Location from "../assets/icons/location.svg";
 import Tlf from "../assets/icons/tlf.svg";
 import Plane from "../assets/icons/paper-plane.svg";
+import { useAuth } from "../hooks/useAuth";
 import "./Footer.scss";
 export default function Footer() {
+  const navigate = useNavigate();
+  const { isAuthenticated, logout } = useAuth();
+
+  const handleLogoutClick = () => {
+    logout();
+    navigate("/");
+  };
+
   return (
     <>
       <div className="footer-back">
@@ -79,7 +88,13 @@ export default function Footer() {
                     <NavLink to={"/contact"}>Kontakt os</NavLink>
                   </li>
                   <li>
-                    <NavLink to={"/"}>Log ind / bliv bruger</NavLink>
+                    {isAuthenticated ? (
+                      <button type="button" className="footer_auth_btn" onClick={handleLogoutClick}>
+                        Log ud
+                      </button>
+                    ) : (
+                      <NavLink to="/auth">Log ind / bliv bruger</NavLink>
+                    )}
                   </li>
                 </ul>
               </nav>

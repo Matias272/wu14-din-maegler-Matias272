@@ -1,10 +1,19 @@
-import { NavLink, Link } from "react-router";
+import { NavLink, Link, useNavigate } from "react-router";
 import Logo from "../assets/logo.svg";
 import Plane from "../assets/icons/paper-plane.svg";
 import Tlf from "../assets/icons/tlf.svg";
 import User from "../assets/icons/user.svg";
+import { useAuth } from "../hooks/useAuth";
 import "./Header.scss";
 export default function Header() {
+  const navigate = useNavigate();
+  const { isAuthenticated, logout } = useAuth();
+
+  const handleLogoutClick = () => {
+    logout();
+    navigate("/");
+  };
+
   return (
     <>
       <section className="header_top_back">
@@ -20,7 +29,13 @@ export default function Header() {
             </li>
             <li>
               <img src={User} alt="" />
-              <a href="#">Log ind</a>
+              {isAuthenticated ? (
+                <button type="button" className="header_auth_btn" onClick={handleLogoutClick}>
+                  Log ud
+                </button>
+              ) : (
+                <NavLink to="/auth">Log ind</NavLink>
+              )}
             </li>
           </ul>
         </div>

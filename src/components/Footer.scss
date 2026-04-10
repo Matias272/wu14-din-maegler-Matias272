@@ -125,6 +125,13 @@
   font-size: 12px;
 }
 
+.footer_auth_btn {
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+  font-size: 14px;
+}
+
 @media (max-width: 768px) {
   .footer-back {
     background: linear-gradient(to bottom, $bg-1 70%, white 30%);

@@ -63,6 +63,14 @@
     }
   }
 }
+
+.header_auth_btn {
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+}
+
 @media (max-width: 768px) {
   .header_top {
     display: none;
