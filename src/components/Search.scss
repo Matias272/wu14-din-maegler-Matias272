@@ -1,0 +1,155 @@
+@use "../styles/variables" as *;
+.search {
+  position: relative;
+  width: 100%;
+  margin: 0 45px;
+  background-color: white;
+  padding: 30px 25px;
+  & h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 40px;
+      height: 4px;
+      background-color: $primary-1;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  & p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  &_form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    & input {
+      border-radius: 2px;
+      font-size: 16px;
+      font-weight: normal;
+      padding: 2px 10px;
+      border: 1px solid #d3dee8;
+      height: 48px;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+    & button {
+      border-radius: 2px;
+      font-size: 16px;
+      font-weight: normal;
+      height: 48px;
+      width: 120px;
+      color: white;
+      background-color: $primary-1;
+      cursor: pointer;
+    }
+  }
+}
+
+.search_overlay {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  border-top: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  &_panel {
+    width: min(900px, 100%);
+    max-height: 85vh;
+    overflow: auto;
+    border-radius: 4px;
+    padding: 22px;
+  }
+
+  &_head {
+    margin-bottom: 15px;
+
+    h3 {
+      margin: 0;
+      color: $head-1;
+      font-size: 22px;
+    }
+  }
+
+  &_list {
+    display: grid;
+    gap: 14px;
+  }
+
+  &_item {
+    border: 1px solid #d3dee8;
+    display: flex;
+    gap: 14px;
+    padding: 10px;
+
+    img {
+      width: 150px;
+      height: 95px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    h4,
+    p {
+      margin: 0 0 6px;
+    }
+
+    h4 {
+      color: $head-1;
+      font-size: 20px;
+    }
+
+    p {
+      color: #5a5f67;
+    }
+
+    strong {
+      color: $head-1;
+    }
+  }
+
+  &_empty {
+    margin: 0;
+    color: #5a5f67;
+  }
+}
+
+@media (max-width: 768px) {
+  .search_overlay {
+    &_panel {
+      padding: 16px;
+    }
+
+    &_head {
+      align-items: flex-start;
+      flex-direction: column;
+
+      h3 {
+        font-size: 18px;
+      }
+    }
+
+    &_item {
+      img {
+        width: 115px;
+        height: 80px;
+      }
+
+      h4 {
+        font-size: 17px;
+      }
+    }
+  }
+}

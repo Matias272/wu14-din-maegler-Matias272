@@ -1,0 +1,545 @@
+@use "../styles/variables" as *;
+// -------------------------------------------------- Hero
+.home_hero {
+  position: relative;
+  height: 90dvh;
+  &_img {
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  &_content {
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    max-width: 920px;
+    width: 100%;
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    & h2 {
+      color: white;
+      font-size: 50px;
+      font-weight: bold;
+    }
+  }
+}
+
+// --------------------------------------------------------- 1st sec
+.home_intro {
+  &_wrapper {
+    padding: 100px 45px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+  }
+  &_img {
+    width: 40%;
+    height: 450px;
+    position: relative;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &_over {
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 100%;
+      height: 100%;
+      border: 10px solid $primary-1;
+      &_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1;
+        width: 180px;
+        height: 180px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: white;
+        background-color: $primary-1;
+        & h2 {
+          font-size: 60px;
+        }
+        & p {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  &_content {
+    width: 60%;
+    & h2 {
+      max-width: 480px;
+      color: $head-1;
+      font-size: 38px;
+      margin-bottom: 25px;
+    }
+
+    & p {
+      max-width: 520px;
+      line-height: 1.6;
+    }
+    &_ul {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      & li figure {
+        display: flex;
+        gap: 10px;
+        & img {
+          padding: 10px;
+          background-color: $sp-1;
+        }
+      }
+    }
+  }
+}
+.intro_line {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.intro_bottom_info {
+  padding: 100px 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &_ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+    & li {
+      max-width: 300px;
+    }
+    &_fig {
+      display: flex;
+      align-items: start;
+      gap: 7px;
+      & img {
+        background-color: $sp-1;
+        padding: 10px;
+      }
+      & h4 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      & p {
+        font-size: 18px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .home_intro {
+    &_wrapper {
+      padding: 55px 45px;
+      flex-direction: column;
+    }
+    &_img {
+      transform: translateX(-15px);
+      width: 100%;
+    }
+    &_content {
+      width: 100%;
+    }
+  }
+  .intro_bottom_info {
+    padding: 55px 45px;
+  }
+}
+
+// --------------------------------------------------------- Homes sec
+.home_homes {
+  background-color: $bg-1;
+  &_head {
+    text-align: center;
+    h2 {
+      font-size: 38px;
+      color: $head-1;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: #5a5f67;
+      font-size: 18px;
+    }
+  }
+  &_wrapper {
+    padding: 100px 45px;
+    display: grid;
+    gap: 55px;
+  }
+
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  &_btn {
+    background-color: $primary-1;
+    color: white;
+    font-size: 18px;
+    margin: 0 auto;
+    height: 62px;
+    width: 178px;
+    border-radius: 2px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 62px;
+    border: none;
+    cursor: pointer;
+  }
+
+  &_empty {
+    text-align: center;
+    color: #5a5f67;
+  }
+}
+
+@media (max-width: 1100px) {
+  .home_homes {
+    &_grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home_homes {
+    padding: 55px 45px;
+
+    &_head {
+      h2 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    &_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// --------------------------------------------------------- Homes newsEmail
+.home_news {
+  height: 300px;
+  position: relative;
+  &_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #394652e7;
+  }
+  &_wrapper {
+    max-width: 1200px;
+    width: 100%;
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 45px;
+    &_form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+      & label {
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        width: 50%;
+      }
+      &_input {
+        position: relative;
+        font-size: 18px;
+        width: 50%;
+        & input {
+          font-size: 18px;
+          border-radius: 2px;
+          border: none;
+          width: 100%;
+          padding: 22px;
+          &:focus {
+            outline: none;
+          }
+        }
+        &_btn {
+          display: flex;
+          align-items: center;
+          background-color: rgba(128, 128, 128, 0);
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          transform: translateY(-50%);
+          cursor: pointer;
+          & img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .home_news_wrapper_form {
+    flex-direction: column;
+    & label {
+      text-align: center;
+      width: 100%;
+    }
+    &_input {
+      width: 100%;
+      & input {
+        font-size: 16px;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+.home_news_success {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2f7a45;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 2000;
+}
+// ------------------------------------------------------------- Agents section
+.home_agents {
+  &_wrapper {
+    padding: 55px 45px;
+    display: grid;
+    gap: 30px;
+  }
+
+  &_head {
+    text-align: center;
+
+    h2 {
+      color: $head-1;
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: $para-1;
+      line-height: 1.5;
+      font-size: 18px;
+    }
+  }
+
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  &_card {
+    background-color: white;
+    border: 1px solid #d7dde3;
+
+    img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    &_content {
+      padding: 18px;
+      text-align: center;
+      display: grid;
+      gap: 10px;
+      &_ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        & a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        & img {
+          object-fit: contain;
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      h4 {
+        margin: 0;
+        color: $head-1;
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: $para-2;
+      }
+
+      a {
+        color: $head-1;
+        text-decoration: none;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &_btn {
+    margin: 0 auto;
+    background-color: $primary-1;
+    color: white;
+    height: 52px;
+    width: 170px;
+    font-size: 16px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home_agents {
+    &_grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home_agents {
+    &_wrapper {
+      padding: 55px 20px;
+    }
+
+    &_head h2 {
+      font-size: 30px;
+    }
+
+    &_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// ------------------------------------------------------------- Home Download app section
+.home_app {
+  background-color: $primary-1;
+  color: white;
+  &_wrapper {
+    padding: 65px 45px 0 45px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &_content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      & h2 {
+        max-width: 350px;
+        font-size: 38px;
+        margin: 0;
+      }
+      & p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 0;
+        max-width: 500px;
+      }
+      &_ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        & button {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 16px 36px;
+          border-radius: 5px;
+          font-size: 18px;
+          font-weight: 600;
+          cursor: pointer;
+        }
+        &_btn1 {
+          background-color: white;
+          color: $primary-1;
+        }
+        &_btn2 {
+          background-color: $primary-1;
+          color: white;
+          border: 2px solid white;
+        }
+      }
+    }
+    &_img {
+      display: flex;
+      &_img1 {
+        transform: translateX(50px);
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .home_app {
+    &_wrapper {
+      &_content {
+        width: 100%;
+        align-items: center;
+      }
+      gap: 55px;
+      &_img {
+        transform: translateX(-25px);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        & img {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
